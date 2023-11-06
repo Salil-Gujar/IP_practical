@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>JS form validation</title>
+        <script>
+            function validate(){
+                x1=document.getElementById("Email").value;
+                atpos=x1.indexOf("@");
+                dotpos=x1.lastIndexOf(".");
+                if(document.getElementById("Name").value==""){
+                    alert("Enter your name");
+                    return false;
+                }
+                if(atpos<1||dotpos+2>x1.length||atpos+2>dotpos){
+                    alert("Invalid email");
+                    return false;
+                }
+                if(document.getElementById("Phone").value.length!=10||isNaN(document.getElementById("Phone").value)){
+                    alert("Phone number should be of 10 digits");
+                    return false;
+                }
+                if(document.getElementById("Password").value.length<6){
+                    alert("Enter a longer password for it to be stronger");
+                    return false;
+                }
+                if(document.getElementById("Password").value!=document.getElementById("CPassword").value){
+                    alert("Passwords dont match");
+                    return false;
+                }
+                alert("Form successfully submitted !")
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="display: flex;justify-content: center;">
+        <form onsubmit="return validate()">
+            <label for="Name">Name</label><br>
+            <input type="text" id="Name" required><br><br>
+            <label for="Email">Email</label><br>
+            <input type="text" id="Email" required><br><br>
+            <label for="Phone">Phone</label><br>
+            <input type="text" id="Phone"  required><br><br>
+            <label for="Password">Password</label><br>
+            <input type="password" id="Password" required><br><br>
+            <label for="CPassword">Confirm your Password</label><br>
+            <input type="password" id="CPassword" required><br><br>
+            <div style="display: flex;justify-content: center;">
+            <button type="submit" style="background-color: aquamarine; border:solid black 2px; ">Submit</button>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>

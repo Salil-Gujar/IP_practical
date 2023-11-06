@@ -1,0 +1,28 @@
+.class1{
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+}
+.class2{
+    display: flex;
+    background-color: red;
+    justify-content: center;
+}
+#UnorderedList{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 300;
+}
+table{
+    border: solid 2px black;
+    border-radius: 5px;
+    border-collapse: collapse;
+    margin: 20px;
+}
+td,th{
+    border: solid 2px black;
+    padding: 20px;
+}
+body{
+    background-color: greenyellow;
+}
